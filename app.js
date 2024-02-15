@@ -1,6 +1,9 @@
-const { number } = require("yargs");
+
 
 function intToRomanConverter(number){
+    if(typeof number === undefined || number === null || typeof number === 'function'){
+        throw new Error("The input should be an int")
+    }
     if(typeof number !== 'number' || !Number.isInteger(number) ){
         throw new Error("The input should be an int")
     }
@@ -38,5 +41,5 @@ function intToRomanConverter(number){
     return result;
 }
 const number2 = 300;
-console.log(`The number ${number} to roman should be ${intToRomanConverter(number2)}`)
+console.log(`The number ${number2} to roman should be ${intToRomanConverter(number2)}`)
 module.exports = intToRomanConverter;
