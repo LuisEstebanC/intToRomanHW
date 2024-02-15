@@ -8,4 +8,4 @@ Live server
 Steps:
 Clone the repository
 Open the file
-More information: Check out the official Jest documentation here.
+More information: Check out the official Jest documentation https://jestjs.io/docs/getting-started.
