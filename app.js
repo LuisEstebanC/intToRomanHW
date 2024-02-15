@@ -1,5 +1,11 @@
+const { number } = require("yargs");
+
 function intToRomanConverter(number){
     if(typeof number !== 'number' || !Number.isInteger(number) ){
+        throw new Error("The input should be an int")
+    }
+
+    if( number <= 0 || number >=4000){
         throw new Error("It must be a number between 1 and 3999.")
     }
 
@@ -20,6 +26,17 @@ function intToRomanConverter(number){
 
     ]
 
-}
+    let result = '';
 
+    for(let i = 0; i <values.length; i++ ){
+        while(number >= values[i].value){
+            result += values[i].letter
+            number -= values[i].value
+        }
+    }
+    console.log(result);
+    return result;
+}
+const number2 = 300;
+console.log(`The number ${number} to roman should be ${intToRomanConverter(number2)}`)
 module.exports = intToRomanConverter;
